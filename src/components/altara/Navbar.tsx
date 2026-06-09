@@ -12,7 +12,7 @@ const navLinks = [
 export function Navbar() {
   return (
     <header className="absolute inset-x-0 top-0 z-30 px-5 pt-5 sm:px-8 lg:px-10">
-      <nav className="glass-light mx-auto flex max-w-[1500px] items-center justify-between rounded-2xl px-4 py-2.5 shadow-card sm:px-6 sm:py-3 lg:px-8">
+      <nav className="mx-auto flex max-w-[1500px] items-center justify-between rounded-2xl border border-white/60 bg-white/75 px-4 py-2.5 shadow-card backdrop-blur-xl sm:px-6 sm:py-3 lg:px-8">
         <a href="#" className="flex shrink-0 items-center" aria-label="ALTARA bosh sahifa">
           <img src="/img/logo.png" alt="ALTARA Natural Mineral Water" className="h-10 w-auto sm:h-11" />
         </a>

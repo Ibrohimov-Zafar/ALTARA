@@ -30,7 +30,7 @@ export function Hero() {
       <img
         src="/img/z.png"
         alt="Chotqol tog'lari va billur ko'l manzarasi"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full scale-105 object-cover blur-[1px]"
       />
       <div className="absolute inset-y-0 left-0 w-[62%] bg-gradient-to-r from-white/80 via-white/45 to-transparent sm:w-[58%] lg:w-[52%]" />
       <div className="absolute bottom-0 left-0 h-36 w-[62%] bg-gradient-to-t from-white/30 to-transparent sm:w-[58%] lg:w-[52%]" />
