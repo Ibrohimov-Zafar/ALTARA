@@ -11,12 +11,7 @@ const features = [
 export function FeaturesSection() {
   return (
     <section id="quality" className="relative overflow-hidden py-10 lg:py-14">
-      <img
-        src="/img/bg.png"
-        alt=""
-        aria-hidden
-        className="absolute inset-0 h-full w-full object-cover"
-      />
+     
       <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-altara-light/40 to-white/60" />
 
       <div className="relative z-10 mx-auto grid max-w-[1400px] grid-cols-1 gap-4 px-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5 lg:px-12">

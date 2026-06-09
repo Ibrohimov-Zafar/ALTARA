@@ -41,33 +41,33 @@ export function Hero() {
         <div className="grid flex-1 grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-8">
           {/* Left */}
           <div className="animate-fade-up flex flex-col">
-            <span className="font-body text-xs font-semibold uppercase tracking-[0.3em] text-altara-gold">
+            <span className="font-body text-sm font-semibold uppercase tracking-[0.3em] text-altara-gold sm:text-base">
               Premium Mineral Water
             </span>
 
-            <h1 className="mt-4 font-display text-[clamp(3.5rem,10vw,6.5rem)] font-black leading-[0.9] tracking-tight text-altara-primary">
+            <h1 className="mt-4 font-display text-[clamp(4.25rem,12vw,8.5rem)] font-black leading-[0.88] tracking-tight text-altara-primary">
               ALTARA
             </h1>
 
-            <p className="mt-4 font-body text-sm font-bold uppercase tracking-[0.14em] text-altara-secondary sm:text-base">
+            <p className="mt-5 font-body text-base font-bold uppercase tracking-[0.14em] text-altara-secondary sm:text-lg lg:text-xl">
               Tozalik. Tabiat. Sog&apos;lom hayot.
             </p>
 
-            <p className="mt-5 max-w-lg font-body text-base leading-relaxed text-altara-primary/75 sm:text-[1.0625rem]">
+            <p className="mt-6 max-w-xl font-body text-lg leading-relaxed text-altara-primary/80 sm:text-xl lg:text-[1.35rem]">
               Chotqol tog&apos;larining eng sof buloqlaridan olingan tabiiy mineral suv. Har bir
               tomchida tabiatning ta&apos;mi va sog&apos;liq uchun foyda.
             </p>
 
            
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <button className="group inline-flex items-center justify-center gap-2 rounded-full bg-altara-primary px-7 py-3.5 font-body text-sm font-semibold text-white shadow-glow transition-all hover:bg-altara-secondary active:scale-[0.98] sm:text-base">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <button className="group inline-flex items-center justify-center gap-2 rounded-full bg-altara-primary px-8 py-4 font-body text-base font-semibold text-white shadow-glow transition-all hover:bg-altara-secondary active:scale-[0.98] sm:text-lg">
                 Buyurtma Berish
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
               <a
                 href="#product"
-                className="group inline-flex items-center justify-center gap-2 rounded-full border border-altara-primary/25 bg-white/50 px-7 py-3.5 font-body text-sm font-semibold text-altara-primary backdrop-blur-sm transition-all hover:border-altara-primary/50 hover:bg-white/80 active:scale-[0.98] sm:text-base"
+                className="group inline-flex items-center justify-center gap-2 rounded-full border border-altara-primary/25 bg-white/50 px-8 py-4 font-body text-base font-semibold text-altara-primary backdrop-blur-sm transition-all hover:border-altara-primary/50 hover:bg-white/80 active:scale-[0.98] sm:text-lg"
               >
                 Mahsulotlar
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -100,13 +100,13 @@ export function Hero() {
       {/* Scroll indicator */}
       <a
         href="#quality"
-        className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1 text-white/90 transition-opacity hover:opacity-100"
+        className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1.5 rounded-2xl   px-4 py-3 shadow-card backdrop-blur-md transition-transform hover:scale-105 active:scale-95"
         aria-label="Pastga scroll qilish"
       >
-        <div className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-white/80 pt-1.5">
-          <span className="h-1.5 w-1 animate-bounce rounded-full bg-white/90" />
+        <div className="flex h-12 w-7 items-start justify-center rounded-full border-2 border-altara-primary pt-2">
+          <span className="h-2 w-1.5 animate-bounce rounded-full bg-altara-primary" />
         </div>
-        <ChevronDown className="h-4 w-4 opacity-80" strokeWidth={2} />
+        <ChevronDown className="h-5 w-5 text-altara-primary" strokeWidth={2.5} />
       </a>
     </section>
   );
