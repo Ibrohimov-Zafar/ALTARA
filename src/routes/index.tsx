@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/altara/Hero";
 import { FeaturesSection } from "@/components/altara/FeaturesSection";
+import { AboutSection } from "@/components/altara/AboutSection";
+import { ContactSection } from "@/components/altara/ContactSection";
 import { ProductsSection } from "@/components/altara/ProductsSection";
 
 export const Route = createFileRoute("/")({
@@ -29,6 +31,8 @@ function Index() {
       <Hero />
       <FeaturesSection />
       <ProductsSection />
+      <AboutSection />
+      <ContactSection />
     </main>
   );
 }
