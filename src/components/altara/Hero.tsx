@@ -61,13 +61,13 @@ export function Hero() {
            
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <button className="group inline-flex items-center justify-center gap-2 rounded-full bg-altara-primary px-8 py-4 font-body text-base font-semibold text-white shadow-glow transition-all hover:bg-altara-secondary active:scale-[0.98] sm:text-lg">
+              <button className="group inline-flex items-center justify-center gap-2 rounded-md bg-altara-primary px-5 py-2.5 font-body text-base font-semibold text-white shadow-glow transition-all hover:bg-altara-secondary active:scale-[0.98]">
                 Buyurtma Berish
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
               <a
                 href="#product"
-                className="group inline-flex items-center justify-center gap-2 rounded-full border border-altara-primary/25 bg-white/50 px-8 py-4 font-body text-base font-semibold text-altara-primary backdrop-blur-sm transition-all hover:border-altara-primary/50 hover:bg-white/80 active:scale-[0.98] sm:text-lg"
+                className="group inline-flex items-center justify-center gap-2 rounded-md border border-altara-primary/25 bg-white/50 px-5 py-2.5 font-body text-base font-semibold text-altara-primary backdrop-blur-sm transition-all hover:border-altara-primary/50 hover:bg-white/80 active:scale-[0.98]"
               >
                 Mahsulotlar
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

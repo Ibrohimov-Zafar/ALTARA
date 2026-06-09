@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Globe } from "lucide-react";
 
 const navLinks = [
   { label: "Biz haqimizda", href: "#about" },
@@ -31,10 +31,11 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <button className="flex items-center gap-1.5 rounded-full border border-altara-primary/10 bg-white/60 px-3 py-1.5 font-body text-sm font-semibold text-altara-primary transition-shadow hover:shadow-card sm:px-3.5 sm:py-2">
-            <span className="text-base">🌐</span> UZ
+          <button className="inline-flex h-9 items-center gap-1.5 rounded-md border border-altara-primary/10 bg-white/60 px-4 font-body text-sm font-semibold leading-none text-altara-primary transition-shadow hover:shadow-card">
+            <Globe className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
+            UZ
           </button>
-          <button className="group hidden items-center gap-1.5 rounded-full bg-altara-primary px-5 py-2 font-body text-sm font-semibold text-white shadow-card transition-all hover:bg-altara-secondary sm:inline-flex">
+          <button className="group hidden h-9 items-center gap-1.5 rounded-md bg-altara-primary px-4 font-body text-sm font-semibold leading-none text-white shadow-card transition-all hover:bg-altara-secondary sm:inline-flex">
             Buyurtma Berish
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
           </button>
