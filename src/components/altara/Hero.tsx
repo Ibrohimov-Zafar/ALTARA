@@ -35,7 +35,7 @@ export function Hero() {
         <div className="grid flex-1 grid-cols-1 items-center gap-4 lg:grid-cols-2 lg:gap-8">
           {/* Bottle — mobile: top center; desktop: right */}
           <div className="order-1 w-full lg:order-2">
-            <div className="flex w-full justify-center lg:items-end lg:justify-end">
+            <div className="flex w-full items-end justify-center gap-3 lg:justify-end lg:gap-6">
               <div className="animate-float relative max-lg:translate-x-4 lg:translate-x-8">
                 <img
                   key={activeSize}
@@ -44,6 +44,12 @@ export function Hero() {
                   className="animate-bottle-in mx-auto block h-[min(62vh,520px)] w-auto object-contain object-center drop-shadow-2xl sm:h-[min(58vh,480px)] lg:h-[min(68vh,600px)] xl:h-[min(72vh,680px)]"
                 />
               </div>
+
+              <img
+                src="/img/sertificat.png"
+                alt="Premium Quality, Halal Certified va Natural 100% sertifikatlari"
+                className="mb-6 hidden h-[min(36vh,320px)] w-auto translate-x-3 object-contain mix-blend-lighten drop-shadow-lg lg:mb-16 lg:block lg:h-[min(42vh,380px)] lg:translate-x-5 xl:h-[min(46vh,420px)]"
+              />
             </div>
           </div>
 
