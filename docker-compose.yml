@@ -1,0 +1,12 @@
+services:
+  altara-web:
+    build: .
+    image: altara-web
+    container_name: altara-web
+    restart: unless-stopped
+    ports:
+      - "8087:3000"
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 3000
