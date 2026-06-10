@@ -5,8 +5,6 @@ const navLinks = [
   { label: "Biz haqimizda", href: "#about" },
   { label: "Mahsulot", href: "#product" },
   { label: "Sifat", href: "#quality" },
-  { label: "Manba", href: "#source" },
-  { label: "Yangiliklar", href: "#news" },
   { label: "Kontakt", href: "#contact" },
 ];
 
@@ -40,12 +38,12 @@ export function Navbar() {
         (visible ? "translate-y-0" : "-translate-y-[calc(100%+1.25rem)]")
       }
     >
-      <nav className="mx-auto flex max-w-[1500px] items-center justify-between rounded-2xl border border-white/60 bg-white/75 px-4 py-2.5 shadow-card backdrop-blur-xl sm:px-6 sm:py-3 lg:px-8">
-        <a href="#" className="flex shrink-0 items-center" aria-label="ALTARA bosh sahifa">
+      <nav className="mx-auto grid max-w-[1500px] grid-cols-[1fr_auto_1fr] items-center rounded-2xl border border-white/60 bg-white/75 px-4 py-2.5 shadow-card backdrop-blur-xl sm:px-6 sm:py-3 lg:px-8">
+        <a href="#" className="flex shrink-0 items-center justify-self-start" aria-label="ALTARA bosh sahifa">
           <img src="/img/logo.png" alt="ALTARA Natural Mineral Water" className="h-10 w-auto sm:h-11" />
         </a>
 
-        <ul className="hidden items-center gap-7 xl:flex">
+        <ul className="hidden items-center justify-center gap-7 xl:flex">
           {navLinks.map((link) => (
             <li key={link.label}>
               <a
@@ -58,7 +56,7 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="col-start-3 flex items-center justify-self-end gap-2 sm:gap-3">
           <button className="inline-flex h-9 items-center gap-1.5 rounded-md border border-altara-primary/10 bg-white/60 px-4 font-body text-sm font-semibold leading-none text-altara-primary transition-shadow hover:shadow-card">
             <Globe className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
             UZ
