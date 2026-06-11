@@ -1,10 +1,13 @@
 import { ArrowRight, Globe } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const footerLinks = [
-  { label: "Biz haqimizda", href: "#about" },
-  { label: "Mahsulot", href: "#product" },
-  { label: "Sifat", href: "#quality" },
-  { label: "Kontakt", href: "#contact" },
+  { label: "Asosiy", href: "/", isRoute: true },
+  { label: "Biz haqimizda", href: "/haqimizda", isRoute: true },
+  { label: "Mahsulot", href: "/#product", isRoute: false },
+  { label: "Yangiliklar", href: "/yangiliklar", isRoute: true },
+  { label: "Tarix", href: "/tarix", isRoute: true },
+  { label: "Kontakt", href: "#contact", isRoute: false },
 ];
 
 export function Footer() {
@@ -20,12 +23,21 @@ export function Footer() {
             <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 lg:gap-7">
               {footerLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="font-body text-sm font-medium text-altara-primary/85 transition-colors hover:text-altara-secondary"
-                  >
-                    {link.label}
-                  </a>
+                  {link.isRoute ? (
+                    <Link
+                      to={link.href}
+                      className="font-body text-sm font-medium text-altara-primary/85 transition-colors hover:text-altara-secondary"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="font-body text-sm font-medium text-altara-primary/85 transition-colors hover:text-altara-secondary"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

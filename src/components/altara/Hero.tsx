@@ -22,12 +22,12 @@ export function Hero() {
       <img
         src="/img/z.png"
         alt="Chotqol tog'lari va billur ko'l manzarasi"
-        className="absolute inset-0 h-full w-full scale-105 object-cover blur-[1px]"
+        className="absolute inset-0 h-full w-full scale-105 object-cover object-top blur-[1px]"
       />
       <div className="absolute inset-y-0 left-0 hidden w-[62%] bg-gradient-to-r from-white/80 via-white/45 to-transparent sm:w-[58%] lg:block lg:w-[52%]" />
       <div className="absolute inset-x-0 top-0 h-[55%] bg-gradient-to-b from-white/55 via-white/25 to-transparent lg:hidden" />
       <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white/70 via-white/35 to-transparent lg:hidden" />
-      <div className="absolute bottom-0 left-0 hidden h-36 w-[62%] bg-gradient-to-t from-white/30 to-transparent sm:w-[58%] lg:block lg:w-[52%]" />
+      <div className="absolute bottom-0 left-0 hidden h-40 w-full bg-gradient-to-t from-white/60 via-white/25 to-transparent lg:block" />
 
       <Navbar />
 
@@ -91,7 +91,7 @@ export function Hero() {
 
       <a
         href="#quality"
-        className="absolute bottom-8 left-1/2 z-20 hidden -translate-x-1/2 flex-col items-center gap-1.5 rounded-2xl px-4 py-3 shadow-card backdrop-blur-md transition-transform hover:scale-105 active:scale-95 lg:flex"
+        className="absolute bottom-8 left-1/2 z-20 hidden -translate-x-1/2 flex-col items-center gap-1.5 rounded-2xl bg-white/35 px-4 py-3 backdrop-blur-md transition-transform hover:scale-105 active:scale-95 lg:flex"
         aria-label="Pastga scroll qilish"
       >
         <div className="flex h-12 w-7 items-start justify-center rounded-full border-2 border-altara-primary pt-2">

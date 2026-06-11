@@ -1,11 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Globe } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const navLinks = [
-  { label: "Biz haqimizda", href: "#about" },
-  { label: "Mahsulot", href: "#product" },
-  { label: "Sifat", href: "#quality" },
-  { label: "Kontakt", href: "#contact" },
+  { label: "Asosiy", href: "/", isRoute: true },
+  { label: "Biz haqimizda", href: "/haqimizda", isRoute: true },
+  { label: "Mahsulot", href: "/#product", isRoute: false },
+  { label: "Sifat", href: "/#quality", isRoute: false },
+  { label: "Yangiliklar", href: "/yangiliklar", isRoute: true },
+  { label: "Tarix", href: "/tarix", isRoute: true },
+  { label: "Kontakt", href: "/#contact", isRoute: false },
 ];
 
 export function Navbar() {
@@ -46,12 +50,21 @@ export function Navbar() {
         <ul className="hidden items-center justify-center gap-7 xl:flex">
           {navLinks.map((link) => (
             <li key={link.label}>
-              <a
-                href={link.href}
-                className="font-body text-sm font-medium text-altara-primary/85 transition-colors hover:text-altara-secondary"
-              >
-                {link.label}
-              </a>
+              {link.isRoute ? (
+                <Link
+                  to={link.href}
+                  className="font-body text-sm font-medium text-altara-primary/85 transition-colors hover:text-altara-secondary"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  href={link.href}
+                  className="font-body text-sm font-medium text-altara-primary/85 transition-colors hover:text-altara-secondary"
+                >
+                  {link.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>

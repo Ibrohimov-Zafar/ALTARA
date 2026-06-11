@@ -1,17 +1,53 @@
+import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { SectionLabel } from "./SectionLabel";
 import { ProductCard } from "./ProductCard";
+import { ProductModal, type ModalItem } from "./ProductModal";
 
-const productImage = "/img/d.png";
-
-const products = [
-  { size: "0.33L", useCase: "Sayohat uchun" },
-  { size: "0.5L", useCase: "Kundalik foydalanish" },
-  { size: "1.0L", useCase: "Oilaviy foydalanish" },
-  { size: "1.5L", useCase: "Maksimal hajm" },
+const products: {
+  name: string;
+  useCase: string;
+  image: string;
+  modalItems: ModalItem[];
+}[] = [
+  {
+    name: "Shisha",
+    useCase: "Shisha idish seriyasi",
+    image: "/glass/combo_glass.png",
+    modalItems: [
+      { size: "0.33L", useCase: "Mini format", image: "/glass/0.33.png" },
+      { size: "0.5L",  useCase: "Kundalik",    image: "/glass/0.5.png"  },
+      { size: "1.0L",  useCase: "Oilaviy",     image: "/glass/1.0.png"  },
+      { size: "1.5L",  useCase: "Maksimal",    image: "/glass/1.5.png"  },
+    ],
+  },
+  {
+    name: "Plastik",
+    useCase: "Plastik idish seriyasi",
+    image: "/bottle/combo_bottle.png",
+    modalItems: [
+      { size: "0.5L", useCase: "Kundalik",      image: "/bottle/0.5.png" },
+      { size: "1.0L", useCase: "Oilaviy",       image: "/bottle/1.0.png" },
+      { size: "1.5L", useCase: "Katta format",  image: "/bottle/1.5.png" },
+      { size: "5.0L", useCase: "Gallon",        image: "/bottle/5.png"   },
+    ],
+  },
+  {
+    name: "Banka",
+    useCase: "Alyuminiy banka seriyasi",
+    image: "/banich/combo_banich.png",
+    modalItems: [
+      { size: "150ml", useCase: "Mini",    image: "/banich/150.png" },
+      { size: "250ml", useCase: "Kichik",  image: "/banich/250.png" },
+      { size: "330ml", useCase: "O'rta",   image: "/banich/330.png" },
+      { size: "550ml", useCase: "Katta",   image: "/banich/550.png" },
+    ],
+  },
 ];
 
 export function ProductsSection() {
+  const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
+
   return (
     <section id="product" className="relative overflow-hidden py-24 lg:py-32">
       <img
@@ -22,7 +58,6 @@ export function ProductsSection() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-white/55 via-altara-light/35 to-white/65" />
 
-      {/* Decorative water droplets */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
         <span className="absolute left-[8%] top-[12%] h-3 w-3 rounded-full bg-altara-secondary/20 blur-[1px]" />
         <span className="absolute right-[12%] top-[18%] h-2 w-2 rounded-full bg-altara-secondary/25" />
@@ -45,14 +80,15 @@ export function ProductsSection() {
           </p>
         </header>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3 lg:grid-cols-3 lg:gap-5">
           {products.map((product, i) => (
             <ProductCard
-              key={product.size}
-              size={product.size}
-              image={productImage}
+              key={product.name}
+              size={product.name}
+              image={product.image}
               useCase={product.useCase}
               delay={100 + i * 100}
+              onView={() => setSelectedProduct(product)}
             />
           ))}
         </div>
@@ -64,6 +100,14 @@ export function ProductsSection() {
           </button>
         </div>
       </div>
+
+      {selectedProduct && (
+        <ProductModal
+          activeSize={selectedProduct.name}
+          modalItems={selectedProduct.modalItems}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
     </section>
   );
 }

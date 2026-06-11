@@ -9,8 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as YangiliklarRouteImport } from './routes/yangiliklar'
+import { Route as TarixRouteImport } from './routes/tarix'
+import { Route as HaqimizdaRouteImport } from './routes/haqimizda'
 import { Route as IndexRouteImport } from './routes/index'
 
+const YangiliklarRoute = YangiliklarRouteImport.update({
+  id: '/yangiliklar',
+  path: '/yangiliklar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TarixRoute = TarixRouteImport.update({
+  id: '/tarix',
+  path: '/tarix',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HaqimizdaRoute = HaqimizdaRouteImport.update({
+  id: '/haqimizda',
+  path: '/haqimizda',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +37,61 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/haqimizda': typeof HaqimizdaRoute
+  '/tarix': typeof TarixRoute
+  '/yangiliklar': typeof YangiliklarRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/haqimizda': typeof HaqimizdaRoute
+  '/tarix': typeof TarixRoute
+  '/yangiliklar': typeof YangiliklarRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/haqimizda': typeof HaqimizdaRoute
+  '/tarix': typeof TarixRoute
+  '/yangiliklar': typeof YangiliklarRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/haqimizda' | '/tarix' | '/yangiliklar'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/haqimizda' | '/tarix' | '/yangiliklar'
+  id: '__root__' | '/' | '/haqimizda' | '/tarix' | '/yangiliklar'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  HaqimizdaRoute: typeof HaqimizdaRoute
+  TarixRoute: typeof TarixRoute
+  YangiliklarRoute: typeof YangiliklarRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/yangiliklar': {
+      id: '/yangiliklar'
+      path: '/yangiliklar'
+      fullPath: '/yangiliklar'
+      preLoaderRoute: typeof YangiliklarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tarix': {
+      id: '/tarix'
+      path: '/tarix'
+      fullPath: '/tarix'
+      preLoaderRoute: typeof TarixRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/haqimizda': {
+      id: '/haqimizda'
+      path: '/haqimizda'
+      fullPath: '/haqimizda'
+      preLoaderRoute: typeof HaqimizdaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +104,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  HaqimizdaRoute: HaqimizdaRoute,
+  TarixRoute: TarixRoute,
+  YangiliklarRoute: YangiliklarRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
