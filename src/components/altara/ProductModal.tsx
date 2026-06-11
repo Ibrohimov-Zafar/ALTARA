@@ -4,6 +4,7 @@ export interface ModalItem {
   size: string;
   useCase: string;
   image: string;
+  heightClass?: string;
 }
 
 interface ProductModalProps {
@@ -54,7 +55,7 @@ export function ProductModal({ activeSize, modalItems, onClose }: ProductModalPr
                 <img
                   src={item.image}
                   alt={`ALTARA ${item.size}`}
-                  className="relative z-10 h-full w-auto max-w-[85%] object-contain object-bottom drop-shadow-lg"
+                  className={`relative z-10 w-auto max-w-[85%] object-contain object-bottom drop-shadow-lg ${item.heightClass ?? "h-full"}`}
                 />
               </div>
 

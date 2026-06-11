@@ -26,10 +26,10 @@ const products: {
     useCase: "Plastik idish seriyasi",
     image: "/bottle/combo_bottle.png",
     modalItems: [
-      { size: "0.5L", useCase: "Kundalik",      image: "/bottle/0.5.png" },
-      { size: "1.0L", useCase: "Oilaviy",       image: "/bottle/1.0.png" },
-      { size: "1.5L", useCase: "Katta format",  image: "/bottle/1.5.png" },
-      { size: "5.0L", useCase: "Gallon",        image: "/bottle/5.png"   },
+      { size: "0.5L", useCase: "Kundalik",     image: "/bottle/0.5.png", heightClass: "h-[65%]" },
+      { size: "1.0L", useCase: "Oilaviy",      image: "/bottle/1.0.png", heightClass: "h-[78%]" },
+      { size: "1.5L", useCase: "Katta format", image: "/bottle/1.5.png", heightClass: "h-[82%]" },
+      { size: "5.0L", useCase: "Gallon",       image: "/bottle/5.png",   heightClass: "h-full"  },
     ],
   },
   {
