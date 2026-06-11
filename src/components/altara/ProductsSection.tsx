@@ -93,12 +93,12 @@ export function ProductsSection() {
           ))}
         </div>
 
-        <div className="mt-14 flex justify-center">
+        {/* <div className="mt-14 flex justify-center">
           <button className="group inline-flex items-center gap-3 rounded-full bg-altara-primary px-10 py-4 font-body text-sm font-semibold uppercase tracking-[0.12em] text-white shadow-glow transition-all hover:bg-altara-secondary active:scale-[0.98]">
             Barcha mahsulotlarni ko&apos;rish
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </button>
-        </div>
+        </div> */}
       </div>
 
       {selectedProduct && (
